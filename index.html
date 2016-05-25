@@ -2,28 +2,31 @@
 <html>
 <head>
 	<title>Demo Uit</title>
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container" id="main"></div>
+
+	<script type="text/template" id="item-template">
+		<div>
+			Titulo: {model:titulo}<br>
+			Autor: {model:autor}<br>
+			Correo Electronico: {model:email}
+		</div>
+		<div>
+			<h3>Edición</h3>
+			<input type="text" placeholder="Titulo" name="titulo" rv-value="model:titulo"><br>
+			<input type="text" placeholder="Autor" name="autor" rv-value="model:autor"><br>
+			<input type="text" placeholder="Correo Electronico" name="email" rv-value="model:email">
+		</div>
+	</script>
+
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
 	<script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bower_components/rivets/dist/rivets.bundled.min.js"></script>
 	<script type="text/javascript" src="bower_components/uit.js/uit.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-</head>
-<body>
-	<div class="container" id="main">
-		Hola Uit <button class="btn btn-primary">Aceptar</button>
-	</div>
-
-	<script type="text/template" id="item-template">
-		<div>
-			Titulo: {model:titulo}<br>
-			Autor: {model:autor}<br>
-			Correo Electronico: {model:email}<br>
-		</div>
-	</script>
 	<script type="text/javascript" src="js/app.js"></script>
 </body>
-
 </html>
