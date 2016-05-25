@@ -1,20 +1,29 @@
-var viewLibro = Uit.View.extend({
+var LibroVista = Uit.View.extend({
 	template: _.template($('#item-template').html()),
 	className: 'vista-libro',
-	initialize: function () {
+	initialize: function (options) {
+		Uit.View.prototype.initialize.apply(this, [options]);
+
 		console.info('mi initialize');
 	}
 });
 
-var modelLibro = new Uit.Model.extend({
-	default: {
-		titulo: 'Texto aqui',
-		autor: 'Autor aqui'
+var LibroModel = Uit.Model.extend({
+	defaults: {
+		titulo: '',
+		autor: '',
+		email: ''
 	}
 });
 
-var mivista = new viewLibro({
-	model: modelLibro
+model = new LibroModel();
+
+model.set('titulo', 'Sample UIT');
+model.set('autor', 'Luis Viera');
+model.set('email', 'levieraf@gmail.com');
+
+var vista = new LibroVista({
+	model: model
 });
 
-Uit.htmlView(mivista, '#main');
+Uit.htmlView(vista, '#main');
